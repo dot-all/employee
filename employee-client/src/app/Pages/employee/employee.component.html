@@ -1,0 +1,26 @@
+<div class="max-w-md mx-auto p-6 mt-10 bg-white rounded-lg shadow-md">
+  <form [formGroup]="formEmployee">
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+      <input type="text" formControlName="fullName" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2" required>
+    </div>
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+      <input type="email" formControlName="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2" required>
+    </div>
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Salario</label>
+      <input type="text" [value]="formatCurrency(formEmployee.get('salary')?.value)" (input)="onSalaryInput($event)" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2" required>
+    </div>
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Fecha contratación</label>
+      <input matInput [matDatepicker]="picker" formControlName="dateContract" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500 p-2" required>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </div>
+    <div class="flex justify-between mt-6">
+      <button mat-raised-button color="primary" (click)="save()" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-200">Guardar</button>
+      <button mat-button color="warn" (click)="back()" class="bg-red-600 text-white font-semibold py-2 px-4 rounded transition duration-200">Volver</button>
+    </div>
+  </form>
+</div>
