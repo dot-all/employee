@@ -35,6 +35,6 @@ To get started with the project, follow these steps:
 
 ### Installation
 
-1. Clone the repository:
+Clone the repository:
    ```bash
    git clone https://github.com/dot-all/employee.git
