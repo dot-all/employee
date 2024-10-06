@@ -1,6 +1,6 @@
 # employee
 
-
+<img src="./employee-client/public/employee_manager.webp">
 
 ## Overview
 
